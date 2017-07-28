@@ -1,0 +1,90 @@
+/* SOCIAL STATS */
+
+.social {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	float: left;
+	margin: 12px 10% auto 10%;
+	position: relative;
+
+	@media #{$brk-narrow} {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+	@media #{$brk-wide} {
+		margin-right: 10%;
+		margin-left: 10%;
+	}
+}
+
+.stats-heading {
+	border: none;
+	height: 60px;
+}
+
+.stats-number {
+	@include text($size: 1.3rem);
+	margin-top: -10px;
+
+	@media #{$brk-wide} {
+		font-size: 2rem;
+	}
+}
+
+.twitter-icon {
+	background-color: $twitter;
+	fill: $white;
+}
+
+.fb-icon {
+	background-color: $facebook;
+	fill: $white;
+}
+
+.google-icon {
+	background-color: $google-plus;
+	fill: $white;
+}
+
+.social-icons {
+	width: 45px;
+	height: 45px;
+}
+
+.twitter {
+	position: absolute;
+	top: 19px;
+	left: 16px;
+}
+
+.facebook {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+}
+
+.google {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+}
+
+#twitter-heading,
+#fb-heading,
+#google-heading {
+	margin-top: 15px;
+}
+
+#twitter-heading {
+	color: $twitter;
+}
+
+#fb-heading {
+	color: $facebook;
+}
+
+#google-heading {
+	color: $google-plus;
+}

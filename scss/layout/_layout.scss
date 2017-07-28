@@ -1,0 +1,52 @@
+/* MAIN LAYOUT */
+
+main {
+	@extend %full-width;
+	margin-top: 55px;
+	padding-left: 55px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	position: absolute;
+	left: 0;
+}
+
+.col {
+	border: 1px solid $tertiary;
+
+	@media #{$brk-narrow} {
+		margin: 0;
+	}
+}
+
+.primary,
+.secondary,
+.tertiary {
+	@extend %full-width;
+}
+
+.primary {
+	@media #{$brk-narrow} {
+		width: 100%;
+	}
+}
+
+.secondary {
+	min-height: 350px;
+
+	@media #{$brk-narrow} {
+		width: 50%;
+	}
+}
+
+.tertiary {
+	@extend %full-width;
+	height: 100px;
+	background-color: $secondary;
+	overflow: hidden;
+	
+	@media #{$brk-narrow} {
+		width: calc(33.3333% - 60px);
+		margin: 20px 0 40px 0;
+	}
+}

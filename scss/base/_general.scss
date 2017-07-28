@@ -1,0 +1,31 @@
+/* GENERAL */
+
+* {
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: $white;
+	color: $text-color;
+	overflow-x: hidden;
+}
+
+h2 {
+	@include text($weight: normal);
+	margin-left: 35px;
+	display: inline-block;
+}
+
+h3 {
+	@extend %uppercase;
+	margin: 0;
+	margin-left: 35px;
+	text-align: left;
+	padding: 20px 0;
+}
+
+h4 {
+	@include text($size: 18px);
+}

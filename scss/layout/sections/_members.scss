@@ -1,0 +1,126 @@
+/* NEW MEMBERS / RECENT ACTIVITY */
+
+.user-images {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	margin-top: 15px;
+	margin-left: 10px;
+
+	@media #{$brk-wide} {
+		margin-bottom: 10px;
+	}
+}
+
+.new-members {
+	margin-right: 35px;
+	list-style: none;
+	text-align: center;
+
+	@media #{$brk-narrow} {
+		text-align: left;
+	}
+}
+
+.user-info {
+	@extend %full-width;
+	max-height: 250px;
+	border-bottom: 1px solid $tertiary;
+
+	@media #{$brk-narrow} {
+		max-height: 210px;
+	}
+
+	@media #{$brk-wide} {
+		height: 158px;
+	}
+
+	@media #{$brk-max} {
+		max-height: 113px;
+	}
+
+	&:last-of-type {
+		border: none;
+	}
+
+	div {
+		margin-left: 15px;
+
+		@media #{$brk-wide} {
+			display: inline-block;
+		}
+
+		p {
+			@include text($color: $primary);
+			margin-top: 0;
+		}
+	}
+
+	h5 {
+		@include text($size: 18px);
+		margin-bottom: 10px;
+
+		@media #{$brk-wide} {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.date {
+	margin-left: 15px;
+
+	@media #{$brk-wide} {
+		margin-left: 90px;
+	}
+
+	@media #{$brk-max} {
+		float: right;
+		margin-top: 45px;
+		margin-left: 0;
+	}
+}
+
+.fa-angle-down {
+	@media #{$brk-narrow} {
+		margin-left: 49%;
+		margin-bottom: 5px;
+	}
+	
+	@media #{$brk-max} {
+		display: none;
+	}
+}
+
+.fa-angle-right {
+	display: none;
+
+	@media #{$brk-max} {
+		display: inline-block;
+		float: right;
+		margin-top: 35px;
+		margin-right: 10px;
+	}
+}
+
+.activity li p {
+	@include text($color: $text-color);
+	padding: 0;
+	margin: 0;
+
+	@media #{$brk-narrow} {
+		margin-top: 20px;
+	}
+}
+
+.recent-activity {
+	@media #{$brk-wide} {
+		display: inline-block;
+		width: 70%;
+	}
+
+	@media #{$brk-max} {
+		margin-top: 0;
+		margin-bottom: 15px;
+		max-height: 113px;
+	}
+}

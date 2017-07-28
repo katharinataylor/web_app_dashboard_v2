@@ -1,0 +1,179 @@
+/* DASHBOARD / CHARTS */
+
+#traffic {
+	width: 20%;
+	margin-right: 0;
+	float: left;
+}
+
+#dashboard-search {
+	@include text($color: $text-color);
+	border: 1px solid $tertiary;
+	float: right;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 10px;
+
+	@media #{$brk-narrow} {
+		min-width: 75%;
+	}
+
+	@media #{$brk-wide} {
+		width: 80%;
+	}
+
+	input {
+		@extend %input-height;
+		width: 80%;
+		float: right;
+		margin: 10px;
+
+		@media #{$brk-narrow} {
+			width: 30%;
+		}
+	}
+}
+
+.alert-message {
+	@include text($color: $white);
+	margin-left: 35px;
+	margin-right: 35px;
+	background-color: $primary;
+	width: calc(100% - 70px);
+	border-radius: 3px;
+	position: relative;
+
+	p {
+		@include text($size: $font-medium);
+		padding: 10px;
+	}
+
+	span {
+		@include text($weight: bold);
+		margin-right: 8px;
+	}
+}
+
+#close-button {
+	@include text($weight: bold);
+	width: 30px;
+	height: 30px;
+	background-color: $primary;
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.chart {
+	@extend %full-width;
+	max-height: 300px;
+	margin: 0 auto;
+	padding: 10px 4% 25px 4%;
+}
+
+.fa-search {
+	position: absolute;
+	top: 25px;
+	right: 20px;
+}
+
+.switch-toggle {
+	a {
+		background-color: #3a718f;
+		border-radius: 20px;
+	}
+
+	input:checked + label {
+		@include text($color: $white);
+		outline: 0;
+	}
+
+	label {
+		@include text($color: $text-color);
+	}
+}
+
+#toggle-fieldset {
+	@extend %full-width;
+	border: none;
+	margin-top: 10px;
+
+	@media #{$brk-narrow} {
+		width: 60%;
+		float: right;
+		margin-right: 40px;
+	}
+
+	@media #{$brk-wide} {
+		width: 40%;
+	}
+}
+
+#chart-3 {
+	padding: 0;
+
+	@media #{$brk-max} {
+		padding: 10px;
+		margin-left: -30px;
+	}
+}
+
+.chart-legend {
+	padding: 0;
+
+	@media #{$brk-max} {
+		float: right;
+		margin-top: -245px;
+		margin-right: 5px;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: space-around;
+		margin-right: 10px;
+
+		@media #{$brk-max} {
+			display: block;
+			margin-right: 0;
+		}
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+
+		@media #{$brk-max} {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+#legend-desktop,
+#legend-tablets,
+#legend-phones {
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: -5px;
+}
+
+#legend-desktop {
+	background-color: rgb(58, 113, 143);
+}
+
+#legend-tablets {
+	background-color: rgb(73, 138, 174);
+}
+
+#legend-phones {
+	background-color: rgb(157, 197, 219);
+}

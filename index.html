@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch-px.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+		<link rel="stylesheet" href="css/application.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+		<title>Web App Dashboard</title>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header role="banner">
+			<h1 id="app-name">Your<span>App</span></h1>
+			<ul>
+				<!-- Notifications icon -->
+				<li class="notifications">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<style type="text/css">
+						#bell{fill:#9A0000;}
+					</style>
+					<g id="_x36__6_">
+						<g>
+							<path id="bell" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+								c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+						</g>
+					</g>
+					</svg>
+					<div class="circle"></div>
+					<div class="notification-dropdown">
+						<ul></ul>
+					</div>
+				</li>
+				<!-- Profile avatar and name -->
+				<li class="profile">
+					<img src="profile-images/profile-picture.jpg" alt="profile-picture">
+					<h4 id="user-name">Katharina Taylor</h4>
+				</li>
+			</ul>
+		</header>
+		<!-- NAVIGATION -->
+		<nav role="navigation">
+			<ul>
+				<!-- Dashboard icon -->
+				<li><a href="#dashboard">
+					<svg version="1.1" id="Line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:#FFFFFF;}
+					</style>
+					<g id="_x31_0_20_">
+						<g>
+							<path class="st0" d="M25,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,16.7,23.3,18,25,18z M24,14h2v2h-2V14z M25,26
+								c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,24.7,23.3,26,25,26z M24,22h2v2h-2V22z M17,26c1.7,0,3-1.3,3-3
+								c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,24.7,15.3,26,17,26z M16,22h2v2h-2V22z M28,0H6C3.8,0,2,1.8,2,4v24c0,2.2,1.8,4,4,4h22
+								c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V8h26V28z M30,6H4V4c0-1.1,0.9-2,2-2h22
+								c1.1,0,2,0.9,2,2V6z M17,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,16.7,15.3,18,17,18z M16,14h2v2h-2V14z M9,26
+								c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C6,24.7,7.3,26,9,26z M8,22h2v2H8V22z M9,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3
+								c-1.7,0-3,1.3-3,3C6,16.7,7.3,18,9,18z M8,14h2v2H8V14z"/>
+						</g>
+					</g>
+					</svg>
+				</a></li>
+				<!-- Members icon -->
+				<li><a href="#members">
+					<svg version="1.1" id="Line_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:#FFFFFF;}
+					</style>
+					<g id="_x37__17_">
+						<g>
+							<path class="st0" d="M18,16.4c1.3-1.7,2-3.9,2-6.4c0-5.5-4-10-9-10C6,0,2,4.5,2,10c0,2.4,0.8,4.6,2,6.4c-2.3,0.8-4,3-4,5.6v4
+								c0,3.3,2.7,6,6,6h10c3.3,0,6-2.7,6-6v-4C22,19.4,20.3,17.2,18,16.4z M4,10c0-4.4,3.1-8,7-8c3.9,0,7,3.6,7,8s-3.1,8-7,8
+								C7.1,18,4,14.4,4,10z M20,25.5c0,2.5-2.2,4.5-4.9,4.5H6.9C4.2,30,2,28,2,25.5v-3c0-2.1,1.6-3.9,3.8-4.4C7.2,19.3,9,20,11,20
+								c2,0,3.8-0.7,5.2-1.9c2.2,0.5,3.8,2.2,3.8,4.4V25.5z M23,8h8c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1
+								C22,7.6,22.4,8,23,8z M31,24h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C32,24.4,31.6,24,31,24z M31,12h-8
+								c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C32,12.4,31.6,12,31,12z M31,18h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6
+								c0.6,0,1-0.4,1-1C32,18.4,31.6,18,31,18z"/>
+						</g>
+					</g>
+					</svg>
+				</a></li>
+				<!-- Visits icon -->
+				<li><a href="#visits">
+					<svg version="1.1" id="Line_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:#FFFFFF;}
+					</style>
+					<g id="_x35__10_">
+						<g>
+							<path class="st0" d="M14,0h-2c-1.1,0-2,0.9-2,2v28c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V2C16,0.9,15.1,0,14,0z M14,29
+								c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M4,9H2c-1.1,0-2,0.9-2,2v19c0,1.1,0.9,2,2,2h2
+								c1.1,0,2-0.9,2-2V11C6,9.9,5.1,9,4,9z M4,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V12c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M24,16h-2
+								c-1.1,0-2,0.9-2,2v12c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V18C26,16.9,25.1,16,24,16z M24,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V19
+								c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z"/>
+						</g>
+					</g>
+					</svg>
+				</a></li>
+				<!-- Settings icon -->
+				<li><a href=#settings>
+					<svg version="1.1" id="Line_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:#FFFFFF;}
+					</style>
+					<g id="_x32__16_">
+						<g>
+							<path class="st0" d="M26,24H14.9c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h1.1
+								c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,24.4,26.6,24,26,24z M11,27.4c-1.3,0-2.4-1.1-2.4-2.4
+								c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,26.3,12.3,27.4,11,27.4z M26,8H14.9c-0.4-1.7-2-3-3.9-3C9.1,5,7.6,6.3,7.1,8H6
+								C5.4,8,5,8.4,5,9c0,0.6,0.4,1,1,1h1.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,8.4,26.6,8,26,8z M11,11.4
+								c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,10.3,12.3,11.4,11,11.4z M26,16h-2.1
+								c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h10.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26
+								c0.6,0,1-0.4,1-1C27,16.4,26.6,16,26,16z M20,19.4c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4
+								C22.4,18.3,21.3,19.4,20,19.4z M28,0H4C1.8,0,0,1.8,0,4v24c0,2.2,1.8,4,4,4h24c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28
+								c0,1.1-0.9,2-2,2H4c-1.1,0-2-0.9-2-2V4c0-1.1,0.9-2,2-2h24c1.1,0,2,0.9,2,2V28z"/>
+						</g>
+					</g>
+					</svg>
+				</a></li>
+			</ul>
+		</nav>
+		<!-- DASHBOARD -->
+		<main role="main">
+			<div class="col primary" id="dashboard">
+				<h2>Dashboard</h2>
+				<div id="dashboard-search">
+					<label for="search">
+					<input type="text" id="search" name="user_search" placeholder="Search">
+					</label>
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</div>
+				<div class="alert-message">
+					<p><span>Alert</span>Lorem ipsum dolor sit amet, vim nominavi insolens ut, velit dicant soleat ad sit. Est at sonet eirmod verterem.<button id="close-button">&#10005;</button></p>
+				</div>
+				<!-- Traffic chart -->
+				<h3 id="traffic">Traffic</h3>
+				<fieldset id="toggle-fieldset">
+				<legend></legend>
+				<div class="switch-toggle switch-iOS">
+				   	<input id="hour" name="view" type="radio" checked>
+				    <label for="hour" onclick="">Hourly</label>
+
+				    <input id="day" name="view" type="radio">
+				    <label for="day" onclick="">Daily</label>
+
+				    <input id="week" name="view" type="radio">
+				    <label for="week" onclick="">Weekly</label>
+
+				    <input id="month" name="view" type="radio">
+				    <label for="month" onclick="">Monthly</label>
+
+				    <a></a>
+				</div>
+				</fieldset>
+				<canvas id="chart-1" class="chart traffic" style="display: block; height: 100%; width: 100%;"></canvas>
+				<script>
+					var ctx = document.getElementById("chart-1");
+					var myChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels:[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110],
+							datasets: [{
+								data: [0, 500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500, 2000],
+
+								backgroundColor: 'rgba(73, 138, 174, .5)',
+								borderColor: 'rgba(73, 138, 174, 1)',
+								borderWidth: 2,
+								pointRadius: 5,
+								pointBackgroundColor: 'rgb(255, 255, 255)',
+								lineTension: 0.1,
+							}]
+						},
+						options: {
+							legend: {
+								display: false
+							},
+							responsive: true,
+							maintainAspectRatio: false,
+							pointStyle: 'circle',
+							showLines: true,
+							spanGaps: true,
+							// scaleBeginAtZero: true
+							scales: {
+								yAxes: [{
+									ticks: {
+										min: 0,
+										max: 2500,
+										beginAtZero: true,
+										stepSize: 500,
+									},
+									gridLines: {
+										offsetGridLines: true
+									}
+								}]
+							}
+						}
+					});
+				</script>
+
+				<canvas id="chart-1-2" class="chart" style="display: none; height: 100%; width: 100%;"></canvas>
+
+				<canvas id="chart-1-3" class="chart" style="display: none; height: 100%; width: 100%;"></canvas>
+				
+				<canvas id="chart-1-4" class="chart" style="display: none; height: 100%; width: 100%;"></canvas>
+					
+			</div>
+			<div class="col secondary">
+				<!-- Daily Traffic chart -->
+				<h3>Daily Traffic</h3>
+				<canvas id="chart-2" class="chart" style="display: block; height: 100%; width: 100%;"></canvas>
+				<script type="text/javascript">
+					var ctx = document.getElementById("chart-2");
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+							datasets: [{
+								data: [50, 75, 150, 100, 200, 175, 75],
+								backgroundColor: 'rgb(157, 197, 219)',
+
+							}]
+						},
+						options: {
+							legend: {
+								display: false
+							},
+							barThickness: '10px',
+							responsive: true,
+							maintainAspectRatio: false,
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true,
+									}
+								}]
+							}
+						}
+					});
+				</script>
+			</div>
+			<div class="col secondary">
+				<!-- Mobile Users chart -->
+				<h3>Mobile Users</h3>
+				<canvas id="chart-3" class="chart" style="display: block; height: 100%; width: 100%;"></canvas>
+				<div class="chart-legend">
+					<ul>
+						<li><div id="legend-desktop"></div><span>Desktop</span></li>
+						<li><div id="legend-tablets"></div><span>Tablets</span></li>
+						<li><div id="legend-phones"></div><span>Phones</span></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					var ctx = document.getElementById("chart-3");
+					var myChart = new Chart(ctx, {
+						type: 'doughnut',
+						data: {
+							labels: ['Desktop', 'Tablets', 'Phones'],
+							datasets: [{
+								data: [70, 8, 22],
+								backgroundColor: ['rgb(58, 113, 143)', 'rgb(73, 138, 174)', 'rgb(157, 197, 219)']
+
+							}]
+						},
+						options: {
+							legend: {
+								display: false
+							},
+							responsive: true,
+							maintainAspectRatio: false
+						}
+					});
+				</script>
+			</div>
+			<div class="col primary stats-heading" id="visits">
+				<!-- Social Stats -->
+				<h3>Social Stats</h3>
+			</div>
+			<div class="col tertiary">
+				<div class="social twitter-icon">
+					<svg class="social-icons twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<path d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+						c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+						c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+						c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+						c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
+					</svg>
+				</div>
+				<h4 id="twitter-heading">Twitter</h4>
+				<p class="stats-number">10,345</p>
+			</div>
+			<div class="col tertiary">
+				<div class="social fb-icon">
+					<svg class="social-icons facebook" enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
+					</svg>
+				</div>
+				<h4 id="fb-heading">Facebook</h4>
+				<p class="stats-number">8,739</p>
+			</div>
+			<div class="col tertiary">
+				<div class="social google-icon">
+					<svg class="social-icons google" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+					<path d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+						c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+						c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+						c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+						c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+						c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+						c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+						c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+						c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+						c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+						c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+						c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+						c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+						c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+						c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+						h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
+					</svg>
+				</div>
+				<h4 id="google-heading">Google+</h4>
+				<p class="stats-number">2,530</p>
+			</div>
+	
+			<div class="col secondary" id="members">
+				<!-- New Members -->
+				<h3>New Members</h3>
+				<ul class="new-members">
+					<!-- User 1 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/42.jpg" alt="profile-avatar">
+						<div>
+							<h5>Wilma Parker</h5>
+							<p>wilma.parker45@example.com</p>
+						</div>
+						<p class="date">7/25/17</p>
+					</li>
+					<!-- User 2 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/77.jpg" alt="profile-avatar">
+						<div>
+							<h5>Margie Thompson</h5>
+							<p>margie.thompson89@example.com</p>
+						</div>
+						<p class="date">7/25/17</p>
+					</li>
+					<!-- User 3 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/10.jpg" alt="profile-avatar">
+						<div>
+							<h5>Darren Gray</h5>
+							<p>darren.gray77@example.com</p>
+						</div>
+						<p class="date">7/25/17</p>
+					</li>
+					<!-- User 4 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/23.jpg" alt="profile-avatar">
+						<div>
+							<h5>Sofia White</h5>
+							<p>sofia.white80@example.com</p>
+						</div>
+						<p class="date">7/25/17</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col secondary">
+				<!-- Recent Activity -->
+				<h3>Recent Activity</h3>
+				<ul class="new-members activity">
+					<!-- User 1 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/42.jpg" alt="profile-avatar">
+						<div class="recent-activity">
+							<!-- <h5>Wilma Parker</h5> -->
+							<p>Wilma Parker commented on YouApps's SEO Tips</p>
+							<p>1 hour ago</p>
+						</div>
+						<i class="fa fa-angle-down fa-2x"></i> 
+						<i class="fa fa-angle-right fa-2x"></i> 
+					</li>
+					<!-- User 2 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/77.jpg" alt="profile-avatar">
+						<div class="recent-activity">
+							<!-- <h5>Margie Thompson</h5> -->
+							<p>Margie Thompson liked the post Facebook's Changes for 2016</p>
+							<p>4 hours ago</p>
+						</div>
+						<i class="fa fa-angle-down fa-2x"></i> 
+						<i class="fa fa-angle-right fa-2x"></i> 
+					</li>
+					<!-- User 3 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/10.jpg" alt="profile-avatar">
+						<div class="recent-activity">
+							<!-- <h5>Darren Gray</h5> -->
+							<p>Darren Gray commented on Facebook's Changes for 2016</p>
+							<p>3 hours ago</p>
+						</div>
+						<i class="fa fa-angle-down fa-2x"></i> 
+						<i class="fa fa-angle-right fa-2x"></i> 
+					</li>
+					<!-- User 4 -->
+					<li class="user-info">
+						<img class="user-images" src="profile-images/23.jpg" alt="profile-avatar">
+						<div class="recent-activity">
+							<!-- <h5>Sofia White</h5> -->
+							<p>Sofia White posted YouApps's SEO Tips</p>
+							<p>4 hours ago</p>
+						</div>
+						<i class="fa fa-angle-down fa-2x"></i> 
+						<i class="fa fa-angle-right fa-2x"></i> 
+					</li>
+				</ul>
+			</div>
+			<div class="col secondary">
+				<!-- Message User -->
+				<h3>Message User</h3>
+				<div>
+					<form>
+						<input list="name-list" type="text" id="user-search" name="user_search" placeholder="Search for User">
+						<datalist id="name-list">
+							<option value="Wilma Parker">
+							<option value="Margie Thompson">
+							<option value="Darren Gray">
+							<option value="Sofia White">
+						</datalist>
+						<textarea id="message-user" name="user_message" placeholder="Message for User"></textarea>
+						<button id="message-button" type="submit">Send</button>
+						<div id="confirmation">
+							<p>Your message has been sent!</p>
+						</div>
+						<div id="error-message">
+							<p>Please fill in both fields.</p>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col secondary" id="settings">
+				<!-- Settings -->
+				<h3>Settings</h3>
+				
+				<label for="email_notifications" class="switch-light switch-iOS" onclick="">
+			  	<input type="checkbox" id="email_notifications">
+			  	<strong>Send Email Notifications</strong>
+			  	<span>
+			    <span>ON</span>
+			    <span>OFF</span>
+			    <a></a>
+			  	</span>
+				</label>
+
+				<label for="public_profile" class="switch-light switch-iOS" onclick="">
+			  	<input type="checkbox" id="public_profile">
+			  	<strong>Set Profile to Public</strong>
+				<span>
+			    <span>ON</span>
+			    <span>OFF</span>
+			    <a></a>
+			  	</span>
+				</label>
+
+				<select id="timezones" >
+					<option value="" hidden>Select Timezone</option>
+					<option value="bst">BST UTC +1</option>
+					<option value="cest">CEST UTC +2</option>
+					<option value="cet">CET UTC +1</option>
+				</select>
+
+				<button id="save-button" class="settings-button" type="submit">Save</button>
+				<button id="cancel-button" class="settings-button" type="submit">Cancel</button>
+			</div>
+		</main>
+		<script src="js/script.js"></script>
+	</body>
+</html>

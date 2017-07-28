@@ -1,0 +1,114 @@
+/* HEADER */
+
+header {
+	@include text($color: $primary);
+	@extend %full-width;
+	background-color: $secondary;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 65px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 11;
+
+	span {
+		@include text($weight: 300);
+	}
+
+	ul {
+		list-style: none;
+		margin-right: 15px;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+#app-name {
+	@include text($size: 28px);
+	margin-left: 15px;
+}
+
+#bell {
+	stroke: $primary;
+}
+
+.notifications:hover {
+	cursor: pointer;
+}
+
+header svg,
+.circle {
+	margin-top: 10px;
+}
+
+.circle {
+	background-color: $primary;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	display: inline-block;
+	float: right;
+	margin-right: 15px;
+}
+
+.notification-dropdown {
+	position: fixed;
+	top: 65px;
+	right: 0;
+	width: 230px;
+	height: auto;
+	background-color: $secondary;
+	border-bottom: 3px solid $tertiary;
+	display: none;
+
+	ul {
+		@include text($color: $text-color);
+		width: 90%;
+		padding-right: 10px;
+		padding-left: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	li {
+		@extend %full-width;
+		text-align: left;
+		line-height: 1.4rem;
+		margin: 5px 10px;
+		padding: 8px 0;
+		border-top: 1px solid $tertiary;
+
+		&:hover {
+			@include text($color: $primary);
+		}
+	}
+}
+
+.profile {
+	padding: 0;
+	display: inline-block;
+	border-left: 1px solid $tertiary;
+
+	img {
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		display: inline-block;
+		margin: 5px 10px 0 8px;
+	}
+}
+
+#user-name {
+	@include text($size: $font-medium);
+	margin: 10px 0 0 -10px;
+	float: right;
+	padding-left: 10px;
+}

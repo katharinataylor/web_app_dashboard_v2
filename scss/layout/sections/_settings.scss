@@ -1,0 +1,112 @@
+/* SETTINGS */
+
+.switch-light {
+	@extend %full-width;
+	margin-bottom: 25px;
+	float: left;
+
+	strong {
+		margin-left: 35px;		
+		float: left;
+	}
+
+	a {
+		background-color: $white;
+		border-radius: 100%;
+		width: 2rem;
+		height: 2rem;
+		margin-top: 1px;
+		margin-top: 5px;
+		right: 60%;
+	}
+
+	input {
+		@extend %full-height;
+		margin-right: 35px;
+		width: calc(100% - 70px);
+	}
+
+	span {
+		float: right;
+		width: 80px;
+		height: 40px;
+	}
+}
+
+.switch-light > span {
+	@include text($size: $font-small, $color: $white);
+	margin-right: 35px;
+	background-color: $primary;
+	opacity: .8;
+	border-radius: 1.75rem;
+
+	@media #{$brk-max} {
+		margin-right: 35%;
+	}
+
+	span {
+		padding-right: 1px;
+		padding-top: 5px;
+	}
+
+	span:first-of-type {
+		padding-left: 1px;
+		padding-top: 5px;
+	}	
+}
+
+#timezones {
+	@include text($size: $font-small, $color: $text-color);
+	@extend %input-height;
+	width: calc(100% - 70px);
+	margin: 0px 35px 15px 35px;
+	border: 2px solid $input-border;
+	background-color: $secondary;
+
+	&:focus {
+		outline: 0;
+		background-color: $white;
+	}
+}
+
+.settings-button {
+	width: calc(100% - 70px);
+	margin: 10px 35px 0 35px;
+	float: left;
+	border-radius: 5px;
+
+	&:focus {
+		outline: 0;
+	}
+
+	@media #{$brk-narrow} {
+		width: calc(50% - 45px);
+	}
+}
+
+#save-button {
+	background-color: $primary;
+	opacity: .8;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@media #{$brk-narrow} {
+		margin: 0 10px 10px 35px;
+	}
+}
+
+#cancel-button {
+	background-color: $tertiary;
+	margin-bottom: 50px;
+
+	&:hover {
+		background-color: $secondary;
+		color: $tertiary;
+	}
+
+	@media #{$brk-narrow} {
+		margin: 0 35px 10px 10px;
+	}
+}

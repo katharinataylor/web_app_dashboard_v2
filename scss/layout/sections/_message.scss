@@ -1,0 +1,70 @@
+/* MESSAGE USER */
+
+form {
+	@include text($color: $text-color);
+	width: calc(100% - 70px);
+	margin: 0 35px;
+}
+
+#user-search {
+	@extend %full-width;
+	@extend %input-height;
+	margin-bottom: 15px;
+}
+
+input, 
+textarea {
+	@include text($size: $font-small);
+	border: 2px solid $input-border;
+	padding-left: 10px;
+	background-color: $secondary;
+
+	&:focus {
+		background-color: $white;
+	}
+}
+
+textarea {
+	@extend %full-width;
+	height: 7rem;
+	margin-bottom: 15px;
+	padding-top: 15px;
+}
+
+button {
+	@include text($size: $font-small, $weight: bold, $color: $white);
+	@extend %uppercase;
+	@extend %input-height;
+	border: none;
+}
+
+#message-button {
+	@extend %full-width;
+	background-color: $primary;
+	opacity: .8;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+#confirmation,
+#error-message {
+	@include text($weight: bold);
+	border: 2px solid $tertiary;
+	border-radius: 5px;
+	padding-left: 10px;
+	background-color: $white;
+	text-align: center;
+	display: none;
+}
+
+input, 
+textarea,
+#message-button {
+	border-radius: 5px;
+
+	&:focus {
+		outline: 0;
+	}
+}
